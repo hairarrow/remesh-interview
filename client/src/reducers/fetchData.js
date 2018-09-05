@@ -9,9 +9,10 @@ export default (
   switch (action.type) {
     case REQUEST_SESSION:
     case RECEIVE_SESSION:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         session: action.session
-      });
+      };
     default:
       return state;
   }
