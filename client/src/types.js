@@ -35,9 +35,18 @@ export const voteType = shape({
 
 export const votesType = arrayOf(voteType);
 
-export const sessionType = shape({
-  votes: votesType,
-  users: usersType,
-  messages: messagesType,
-  questions: questionsType
-});
+export const sessionType = arrayOf(
+  shape({
+    id: number.isRequired,
+    text: string.isRequired,
+    messages: arrayOf(
+      shape({
+        id: number.isRequired,
+        questionId: number.isRequired,
+        text: string.isRequired,
+        creator: userType.isRequired,
+        votes: usersType.isRequired
+      })
+    )
+  })
+);

@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getData } from "../actions/fetchData";
+import { getData } from "../actions/session";
 import { sessionType } from "../types";
 
 import Questions from "./Questions";
@@ -13,37 +13,13 @@ class Session extends Component {
     dispatch(getData());
   }
 
-  organizeSession = ({ questions, messages, users, votes }) =>
-    [...questions].map(q =>
-      Object.assign({}, q, {
-        messages: [...messages]
-          .filter(({ questionId }) => questionId === q.id)
-          .map(({ creatorId, ...msg }) => ({
-            ...msg,
-            creator: [...users].filter(({ id }) => id === creatorId)[0],
-            votes: [...votes]
-              .filter(
-                ({ questionId, messageId }) =>
-                  questionId === q.id && messageId === msg.id
-              )
-              .map(({ id, userId }) =>
-                Object.assign(
-                  {},
-                  { id },
-                  [...users].filter(user => user.id === userId)[0]
-                )
-              )
-          }))
-      })
-    );
-
   render() {
     const { session } = this.props;
-    const { questions } = session;
+    const { questions, users } = session;
     const organizedSession = questions && this.organizeSession(session);
     return (
       <div>
-        <Filter session={session} />
+        <Filter users={users} />
         <Questions session={organizedSession} />
       </div>
     );
@@ -52,9 +28,6 @@ class Session extends Component {
 
 Session.defaultProps = {
   session: {
-    votes: [],
-    messages: [],
-    users: [],
     questions: []
   }
 };
@@ -64,7 +37,7 @@ Session.propTypes = {
   dispatch: PropTypes.func.isRequired
 };
 
-const mapStateToProps = state => ({ session: state.fetchData.session });
+const mapStateToProps = state => ({ session: state.session.session });
 const mapDispatchToProps = dispatch => ({ dispatch, getData });
 
 export default connect(

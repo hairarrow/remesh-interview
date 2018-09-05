@@ -1,8 +1,10 @@
 import { combineReducers } from "redux";
-import fetchData from "./fetchData";
+import session from "./session";
 import reverseArray from "./reverseArray";
+import filter from "./filter";
 
 export default combineReducers({
+  filter,
   reverseArray,
-  fetchData
+  session
 });
