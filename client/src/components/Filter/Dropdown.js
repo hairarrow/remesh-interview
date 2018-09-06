@@ -1,10 +1,11 @@
 import React, { Component } from "react";
+import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 
 class Dropdown extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isOpen: true
+      isOpen: false
     };
     this.toggleOpen = this.toggleOpen.bind(this);
   }
@@ -27,11 +28,18 @@ class Dropdown extends Component {
           type="button"
           className="filters__menu-item"
           onMouseEnter={!isOpen ? this.toggleOpen : undefined}
-          onClick={this.toggleOpen}
         >
           {title}
         </button>
-        {isOpen && children}
+        <ReactCSSTransitionGroup
+          className="filters__dropdown-menu"
+          transitionName="dropdown-menu"
+          transitionLeaveTimeout={300}
+          transitionEnterTimeout={300}
+        >
+          {isOpen && <div className="filters__dropdown-menu">{children}</div>}
+        </ReactCSSTransitionGroup>
+        {/* <div className="filters__dropdown-menu">{children}</div> */}
       </div>
     );
   }

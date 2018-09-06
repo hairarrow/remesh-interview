@@ -27,7 +27,7 @@ const Filter = ({ dispatch, filters }) => (
             : ""
         }${filterLabel(filter)}`}
       >
-        <div className="filters__dropdown-menu">
+        <div>
           {filters[filter]
             .sort((a, b) => a.metric.localeCompare(b.metric))
             .map(({ metric, enabled }) => (
