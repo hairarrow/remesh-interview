@@ -1,0 +1,27 @@
+.questions {
+  padding-top: 100px;
+}
+
+.questions__entry {
+  padding: 60px;
+  margin-bottom: 60px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, .05);
+}
+
+.questions__question-text {
+  display: inline-block;
+  background: #f8f8f8;
+  font-size: 28px;
+  padding: 20px 30px;
+  border-radius: 16px;
+  border-bottom-left-radius: 4px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 4px 22px rgba(0, 0, 255, .1);
+}
+
+.questions__question-messages {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}

@@ -1,18 +1,19 @@
+import "./index.css";
 import React from "react";
 import FlipMove from "react-flip-move";
 import Message from "../Messages";
 import { sessionType } from "../../types";
 
 const Questions = ({ session }) => (
-  <div>
+  <div className="questions">
     {session.map(question => (
-      <div key={question.id}>
-        <div>{question.text}</div>
-        <FlipMove>
+      <div className="questions__entry" key={question.id}>
+        <div className="questions__question-text">{question.text}</div>
+        <FlipMove className="questions__question-messages">
           {question.messages
             .sort((a, b) => a.votes.length < b.votes.length)
             .map(message => (
-              <div key={message.id}>
+              <div key={message.id} className="message__container">
                 <Message {...message} />
               </div>
             ))}

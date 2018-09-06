@@ -1,12 +1,14 @@
 .filters {
   display: flex;
   align-items: center;
-  background: #eee;
+  position: fixed;
+  background: #eaeaea;
   padding-left: 20px;
   padding-right: 20px;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 }
 
 .filters:before {
@@ -33,7 +35,7 @@
   font-weight: bold;
   border: 0;
   color: #444;
-  background: #eee;
+  background: #efefef;
   border-left: 1px solid rgba(0, 0, 0, 0.1);
   cursor: pointer;
   z-index: 11;

@@ -1,0 +1,44 @@
+.message {
+  max-width: 80%;
+  display: flex;
+  align-items: center;
+  margin-top: 60px;
+  margin-left: auto;
+  padding: 20px;
+  font-size: 21px;
+  color: rgba(255, 255, 255, 0.9);
+  background: #396afc;
+  border-radius: 16px;
+  border-bottom-right-radius: 4px;
+  background: linear-gradient(to bottom, #396afc, #294fff);
+  box-shadow: 0 4px 24px 4px rgba(57, 106, 252, .4);
+  opacity: 0;
+  transition: all 280ms ease;
+  animation: slideUp 450ms ease forwards;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(100px);
+  }
+
+  100% {
+    opacity: .88;
+  }
+}
+
+.message__container {
+  width: 100%;
+  display: flex;
+  justify-items: flex-end;
+}
+
+.message__container:first-child .message { font-size: 28px; }
+.message__container:nth-child(2) .message { font-size: 24px; }
+.message__container:nth-child(n+3) .message { margin-top: 40px; } 
+
+.message__votes {
+  margin-right: 1rem;
+  font-size: 1.3rem;
+  font-weight: bolder;
+}
