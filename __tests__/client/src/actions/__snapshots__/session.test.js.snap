@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`session actions it receives messages 1`] = `
+Array [
+  Object {
+    "messages": Array [
+      Object {
+        "age": Array [
+          1,
+        ],
+      },
+    ],
+    "type": "RECEIVE_MESSAGES",
+  },
+]
+`;
+
+exports[`session actions it receives questions 1`] = `
+Array [
+  Object {
+    "questions": Array [
+      Object {
+        "age": Array [
+          1,
+        ],
+      },
+    ],
+    "type": "RECEIVE_QUESTIONS",
+  },
+]
+`;
+
+exports[`session actions it receives users 1`] = `
+Array [
+  Object {
+    "type": "RECEIVE_USERS",
+    "users": Array [
+      Object {
+        "age": Array [
+          1,
+        ],
+      },
+    ],
+  },
+]
+`;
+
+exports[`session actions it receives votes 1`] = `
+Array [
+  Object {
+    "type": "RECEIVE_VOTES",
+    "votes": Array [
+      Object {
+        "age": Array [
+          1,
+        ],
+      },
+    ],
+  },
+]
+`;

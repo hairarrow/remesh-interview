@@ -23,25 +23,25 @@ const receiveSession = session => ({
 });
 
 export const RECEIVE_USERS = "RECEIVE_USERS";
-const receiveUsers = users => ({
+export const receiveUsers = users => ({
   type: RECEIVE_USERS,
   users
 });
 
 export const RECEIVE_QUESTIONS = "RECEIVE_QUESTIONS";
-const receiveQuestions = questions => ({
+export const receiveQuestions = questions => ({
   type: RECEIVE_QUESTIONS,
   questions
 });
 
 export const RECEIVE_MESSAGES = "RECEIVE_MESSAGES";
-const receiveMessages = messages => ({
+export const receiveMessages = messages => ({
   type: RECEIVE_MESSAGES,
   messages
 });
 
 export const RECEIVE_VOTES = "RECEIVE_VOTES";
-const receiveVotes = votes => ({
+export const receiveVotes = votes => ({
   type: RECEIVE_VOTES,
   votes
 });

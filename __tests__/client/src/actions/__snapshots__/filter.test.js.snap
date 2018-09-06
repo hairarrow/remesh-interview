@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`filter actions it receives filters 1`] = `
+Array [
+  Object {
+    "filters": Object {
+      "age": Array [],
+    },
+    "type": "RECEIVE_FILTERS",
+  },
+]
+`;
