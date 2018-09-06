@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(logger("dev"));
 
-app.use("/api", router);
+app.use("/", router);
 
 if (process.env.NODE_ENV === "production") {
   app.get("*", (req, res) => {
