@@ -21,11 +21,8 @@ const Filter = ({ dispatch, filters }) => (
     {Object.keys(filters).map(filter => (
       <Dropdown
         key={filter}
-        title={`${
-          filters[filter].filter(({ enabled }) => enabled).length
-            ? `${filters[filter].filter(({ enabled }) => enabled).length} • `
-            : ""
-        }${filterLabel(filter)}`}
+        selectedAmount={filters[filter].filter(({ enabled }) => enabled).length}
+        title={`${filterLabel(filter)}`}
       >
         <div>
           {filters[filter]

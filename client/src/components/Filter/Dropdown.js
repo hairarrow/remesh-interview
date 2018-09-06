@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React, { Component } from "react";
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 
@@ -17,7 +18,7 @@ class Dropdown extends Component {
   }
 
   render() {
-    const { title, children } = this.props;
+    const { title, selectedAmount, children } = this.props;
     const { isOpen } = this.state;
     return (
       <div
@@ -26,10 +27,13 @@ class Dropdown extends Component {
       >
         <button
           type="button"
-          className="filters__menu-item"
+          className={`filters__menu-item ${
+            selectedAmount > 0 ? "filters__menu-item--has-selected" : ""
+          }`}
           onMouseEnter={!isOpen ? this.toggleOpen : undefined}
         >
           {title}
+          <span className="filters__menu-selected-count">{selectedAmount}</span>
         </button>
         <ReactCSSTransitionGroup
           className="filters__dropdown-menu"
@@ -39,10 +43,15 @@ class Dropdown extends Component {
         >
           {isOpen && <div className="filters__dropdown-menu">{children}</div>}
         </ReactCSSTransitionGroup>
-        {/* <div className="filters__dropdown-menu">{children}</div> */}
       </div>
     );
   }
 }
+
+Dropdown.propTypes = {
+  title: PropTypes.string.isRequired,
+  selectedAmount: PropTypes.number.isRequired,
+  children: PropTypes.node.isRequired
+};
 
 export default Dropdown;

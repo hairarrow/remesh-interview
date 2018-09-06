@@ -34,6 +34,7 @@
   text-transform: capitalize;
   font-weight: bold;
   border: 0;
+  border-top: 2px solid transparent;
   color: #444;
   background: #efefef;
   border-left: 1px solid rgba(0, 0, 0, 0.1);
@@ -42,7 +43,22 @@
   transition: background 280ms ease;
 }
 
-.filters__menu-item:hover {
+.filters__menu-selected-count {
+  margin-left: 20px;
+}
+
+.filters__menu-item .filters__menu-selected-count { display: none; }
+
+.filters__menu-item--has-selected {
+  color: #0365d6;
+  border-top-color: #0365d6;
+}
+
+.filters__menu-item--has-selected .filters__menu-selected-count {
+  display: inline-block;
+}
+
+.filters__menu-item-container:hover .filters__menu-item {
   background: #fefefe;
   transition: background 280ms ease;
 }
