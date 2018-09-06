@@ -11,7 +11,9 @@ $ yarn && cd client; yarn
 $ yarn start:dev
 ```
 
-You should be able to view the app by visiting `locahost:3000`
+You should be able to view the app by visiting `locahost:3000`.
+
+_You could also visit_ `localhost:5000/api/[questions || votes || users || messages]`
 
 ## The App
 - I created the mock data from the Remesh Fake Server repo and the data is being served with express and json-server. I'm using json-server to get up and running quickly.
