@@ -6,6 +6,7 @@ A simple front-end and back-end implementation.
 
 ```
 $ git clone https://github.com/hairarrow/remesh-interview.git
+$ cd remesh-interview
 $ yarn && cd client; yarn
 $ yarn start:dev
 ```
