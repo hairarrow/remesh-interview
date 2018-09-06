@@ -4,8 +4,8 @@ import { connect } from "react-redux";
 import { getData } from "../actions/session";
 import { sessionType } from "../types";
 
-import Questions from "./Questions";
-import Filter from "./Filter";
+import Questions from "../components/Questions";
+import Filter from "../components/Filter";
 
 class Session extends Component {
   componentDidMount() {
@@ -15,12 +15,10 @@ class Session extends Component {
 
   render() {
     const { session } = this.props;
-    const { questions, users } = session;
-    const organizedSession = questions && this.organizeSession(session);
     return (
       <div>
-        <Filter users={users} />
-        <Questions session={organizedSession} />
+        <Filter />
+        <Questions session={session} />
       </div>
     );
   }
