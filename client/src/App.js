@@ -1,27 +1,19 @@
-import React, { Component } from "react";
+import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Home from "./components/Home";
 import Session from "./containers/Session";
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      showSession: true
-    };
-    this.toggleSession = this.toggleSession.bind(this);
-  }
-
-  toggleSession() {
-    this.setState(({ showSession }) => ({ showSession: !showSession }));
-  }
-
-  render() {
-    const { showSession } = this.state;
-    return (
-      <div className="app-container">
-        <div className="container">{showSession && <Session />}</div>
-      </div>
-    );
-  }
-}
+const App = () => (
+  <div className="app-container">
+    <div className="container">
+      <Router>
+        <div>
+          <Route path="/" exact component={Home} />
+          <Route path="/session" component={Session} />
+        </div>
+      </Router>
+    </div>
+  </div>
+);
 
 export default App;

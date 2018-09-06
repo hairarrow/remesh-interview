@@ -16,7 +16,7 @@ class Session extends Component {
   render() {
     const { session } = this.props;
     return (
-      <div>
+      <div className="session-container">
         <Filter />
         <Questions session={session} />
       </div>

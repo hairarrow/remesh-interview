@@ -1,0 +1,8 @@
+.homepage {
+  animation: appear 280ms ease forwards;
+  opacity: 0;
+}
+
+@keyframes appear {
+  100% { opacity: 1; }
+}

@@ -16,4 +16,10 @@ app.use(middlewares);
 
 app.use("/api", remeshRouter);
 
+if (process.env.NODE_ENV === "production") {
+  app.get("/*", (req, res) => {
+    res.sendFilter(path.join(__dirname, "../client/build", "index.html"));
+  });
+}
+
 app.listen(port, () => console.log(`Listening on port ${port}`));
